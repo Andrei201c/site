@@ -1,17 +1,22 @@
+:root {
+    --textColor: rgb(44, 44, 44);
+}
+
 body {
     background-color: rgb(235, 249, 250);
     padding: 0;
     margin: 0;
-    color: rgb(44, 44, 44);
+    color: var(--textColor);
     font-family: 'Helvetica';
     font-style: italic;
-    font-size: 16px;
+    font-size: 1.3vw;
+    overflow-x: hidden;
 }
 
 .upBar {
     width:100%;
     height: 4vw;
-    background-color: rgb(26, 230, 230);
+    background-color: rgb(255, 255, 255);
 }
 
 .logo {
@@ -37,9 +42,9 @@ body {
     height:10vw;
     text-align: center;
     position: absolute;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top:50%; /* Position text in the middle */
+    left: 50%; /* Position text in the middle */
+    transform: translate(-50%, -50%);  /* Position text in the middle */
     mix-blend-mode:screen;
     border-radius:1vw;
 }
@@ -50,3 +55,142 @@ body {
     position: relative;
     background-size: cover;
 }
+
+.row {
+    width: 100%;
+    height: 35vw;
+    display: flex;
+    padding: 2px;
+}
+
+.firstColumn {
+    
+    width: 49%;
+    height: 100%;
+    margin: 0 0.2vw 0 0.2vw;
+    box-shadow: 2px 2px 8px gray;
+}
+
+.secondColumn {  /* fip card settings */
+    background-color: transparent;
+    width:49%;
+    height:100%;
+    margin: 0 0.2vw 0 0.2vw;
+    align-self: flex-end;
+    perspective: 1000px;
+}
+
+.secondColumn-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    box-shadow:  0 4px 8px lightgray;  /* de modificat matgine din px in vw*/
+}
+
+.secondColumn:hover .secondColumn-inner {
+    transform: rotateY(180deg) ;
+}
+
+.secondColumn-front {
+    background-color: blue;
+}
+
+.secondColumn-front, .secondColumn-back {
+    position: absolute;
+    width: 100%;
+    height:100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.secondColumn-back {
+    background-color: brown;
+    transform: rotateY(180deg);
+}
+
+.titleFirstColumn {
+    text-align: right;
+    font-size: 3vw;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgb(121, 121, 121);
+}
+
+.paragrafFirstColumn {
+    text-shadow: 0.1vw 0.1vw 0.2vw rgb(90, 89, 89);
+    margin: 0 0 0 1.5vw;
+}
+
+
+.listFirstColumn {
+    text-shadow: 0.1vw 0.1vw 0.2vw rgb(90, 89, 89);
+    margin: 1vw 0 0 1.5vw;
+}
+
+.row {
+    width: 100%;
+    height: 35vw;
+    display: flex;
+    padding: 2px;
+}
+
+.blackBar {
+    width: 95%;
+    height: 0.3vw;
+    background-color: rgb(79, 79, 79);
+    margin: 1vw auto;
+    border-radius: 50%;
+}
+
+.informationRow {
+    width: 100%;
+    height: 36vw;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+}
+
+.location {
+    width: 100%;
+    height: 35vw;
+    background-color: azure;
+    display: flex;
+}
+
+.map {
+    margin: 0 0.2vw 0 0.2vw;
+    width: 49%;
+    height: 99%;
+    border-radius:0.2vw;
+    border: 2px solid gray;
+}
+
+.address {
+    font-family:'Another Typewriter';
+    margin: 0 0.2vw 0 0.2vw;
+    width: 49%;
+    height: 99%;
+    border-radius:0.2vw;
+    padding: 2vw;
+    text-decoration:underline;
+    font-weight: bolder;
+    font-size: 1.6vw;
+}
+
+a {
+    text-decoration: none;
+    color: var(--textColor);
+}
+
+a:hover {
+    color:aqua;
+}
+
+footer {
+    text-align: center;
+}
+
+
+
